@@ -1,0 +1,57 @@
+#include <iostream>
+#include <stdio.h>
+int month,days, firstdate;
+void calend(FILE* calender, int days, int date);
+int main() {
+	FILE* calender;
+	calender = fopen("calender.txt", "w+");
+	printf("請輸入月份:");
+	scanf("%d", &month);
+	while (month > 12 || month < 1) {
+		printf("\n月份錯誤請重新輸入:");
+		scanf("%d", &month);
+	}
+	printf("\n請輸入天數:");
+	scanf("%d", &days);
+	while (days > 31 || days < 1) {
+		printf("\n天數錯誤請重新輸入:");
+		scanf("%d", &days);
+	}
+	printf("\n請輸入該月第一天星期幾:");
+	scanf("%d", &firstdate);
+	while (firstdate > 7 || firstdate < 1) {
+		printf("\n星期錯誤請重新輸入:");
+		scanf("%d", &firstdate);
+	}
+	printf("\n\n%13d月份\n", month);
+	fprintf(calender, "\n\n%13d月份\n", month);
+	printf("SUN MON TUE WED THU FRI SAT\n");
+	fprintf(calender, "SUN MON TUE WED THU FRI SAT\n");
+	calend(calender, days, firstdate);
+}
+
+void calend(FILE* c, int days, int date) {
+	int j=1;
+	for (int i = 0; i < date; i++) {
+		printf("    ");
+		fprintf(c, "    ");
+	}
+	for (int i = date; i < 7; i++) {
+		printf("%3d ", j );
+		fprintf(c, "%3d ", j);
+		j++;
+	}
+	printf("\n");
+	fprintf(c, "\n");
+	int count=0;
+	for (int i = j; j <= days; j++) {
+		while (count == 7) {
+			printf("\n");
+			fprintf(c, "\n");
+			count = 0;
+		}
+		printf("%3d ", j );
+		fprintf(c, "%3d ", j);
+		count++;
+	}
+}

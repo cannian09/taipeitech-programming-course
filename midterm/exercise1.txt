@@ -1,0 +1,72 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+#include "math.h"
+#define numberofscore 4
+#define numberofpeople 20
+double sqrt(double x);
+float scoreaverage[numberofscore];
+struct score {
+    int rank;
+	char name;
+	int a, b, c, d, total;
+	float average;
+};
+struct score student[numberofpeople],temp;
+int main() {
+	FILE* c1, * c2;
+	c1 = fopen("grade.txt", "r+");
+	c2 = fopen("gradeout.txt", "w+");
+	if (c1 == NULL || c2 == NULL) {
+		printf("file error");
+	}
+	else {
+		for (int i = 0; i < numberofpeople; i++) {
+			fscanf(c1, "%c %d %d %d %d\n", &student[i].name, &student[i].a, &student[i].b, &student[i].c, &student[i].d);
+			student[i].total = student[i].a + student[i].b + student[i].c + student[i].d;
+			student[i].average = (student[i].total * 0.25);
+			scoreaverage[0] = student[i].a + scoreaverage[0];
+			scoreaverage[1] = student[i].b + scoreaverage[1];
+			scoreaverage[2] = student[i].c + scoreaverage[2];
+			scoreaverage[3] = student[i].d + scoreaverage[3];
+		}
+		float rootmean[4]{0};
+		for (int i = 0; i < numberofscore; i++) {
+			scoreaverage[i] = scoreaverage[i] * 0.05;
+		}
+		for (int i = 0; i < 20; i++) {
+			rootmean[0] = (student[i].a - scoreaverage[0]) * (student[i].a - scoreaverage[0])+ rootmean[0];
+			rootmean[1] = (student[i].b - scoreaverage[1]) * (student[i].b - scoreaverage[1])+ rootmean[1];
+			rootmean[2] = (student[i].c - scoreaverage[2]) * (student[i].c - scoreaverage[2])+ rootmean[2];
+			rootmean[3] = (student[i].d - scoreaverage[3]) * (student[i].d - scoreaverage[3])+ rootmean[3];
+		}
+		for (int i = 0; i < numberofpeople; ++i) {
+			for (int j = 0; j < i; ++j) {
+				if (student[j].average < student[i].average) {
+					temp = student[j];
+					student[j] = student[i];
+					student[i] = temp;
+				}
+			}
+		}
+		printf("名次  姓名  分數1  分數2  分數3  分數4  總分    平均\n");
+		fprintf(c2, "名次  姓名  分數1  分數2  分數3  分數4  總分    平均\n");
+		for (int i = 0; i < numberofpeople; i++) {
+			printf("%4d %5c %6d %6d %6d %6d %5d   %.2f\n", i + 1, student[i].name, student[i].a, student[i].b, student[i].c, student[i].d, student[i].total, (float)student[i].average);
+			fprintf(c2, "%4d %5c %6d %6d %6d %6d %5d   %.2f\n", i + 1, student[i].name, student[i].a, student[i].b, student[i].c, student[i].d, student[i].total, (float)student[i].average);
+		}
+		printf("\n平均        ");
+		fprintf(c2, "\n平均        ");
+		for (int i = 0; i < 4; i++) {
+			printf("%.2f  ", scoreaverage[i]);
+			fprintf(c2, "%.2f  ", scoreaverage[i]);
+		}
+		printf("\n均方差       ");
+		fprintf(c2, "\n均方差       ");
+		for (int i = 0; i < numberofscore; i++) {
+			printf("%.2f   ", sqrt(0.05*rootmean[i]));
+			fprintf(c2, "%.2f   ", sqrt(0.05 * rootmean[i]));
+		}
+	}
+
+}

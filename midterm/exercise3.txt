@@ -1,0 +1,36 @@
+#include <iostream>
+#include <stdio.h>
+struct student {
+    long id;
+    char name[10];
+    int subject[3];
+};
+void swap(struct student s1, struct student s2);
+void printscore(struct student* s3);
+int main()
+{
+    struct student st1 = { 104310030,"學生1",60,70,80 };
+    struct student st2 = { 104310047,"學生2",90,80,70 };
+    printf("交換前\n");
+    printscore(&st1);
+    printscore(&st2);
+    printf("交換後\n");
+    swap(st1, st2);
+}
+void printscore(struct student* s3) {
+    printf("%li  ", s3->id);
+    printf("%s\n", s3->name);
+    for (int i = 0; i < 3; i++) {
+        printf("科目%d成績:", i+1);
+        printf("%d\n", s3->subject[i]);
+    }
+
+}
+void swap(struct student s1, struct student s2) {
+    struct student temp;
+    temp = s1;
+    s1 = s2;
+    s2 = temp;
+    printscore(&s1);
+    printscore(&s2);
+}
