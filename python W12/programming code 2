@@ -1,0 +1,105 @@
+# -*- coding: utf-8 -*-
+"""
+shoplist=['milk','egg','coffee bean','watermelon','pineapple']
+print('shoplist is')
+print(shoplist)
+"""
+"""
+shoplist=['milk','egg','coffee bean','watermelon','pineapple']
+print('shoplist[0] is',shoplist[0])
+"""
+"""
+shoplist=['milk','egg','coffee bean','watermelon','pineapple']
+print('length of shoplist is ',len(shoplist))
+"""
+"""
+shoplist=['milk','egg','coffee bean','watermelon','pineapple']
+print(shoplist)
+shoplist[1]='preserved egg'
+print("after replacement shoplist[1]='preserved egg'")
+print(shoplist)
+"""
+"""
+shoplist=['milk','egg','coffee bean','watermelon','pineapple']
+print(shoplist)
+index=shoplist.index('coffee bean')
+print("after index=shoplist.index('coffee bean')")
+print('index',index)
+"""
+"""
+shoplist=['milk','egg','coffee bean','watermelon','pineapple']
+print(shoplist)
+shoplist.append('bread')
+print("after shoplist.append('bread')")
+print(shoplist)
+"""
+"""
+shoplist=['milk','egg','coffee bean','watermelon','pineapple']
+print(shoplist)
+shoplist.insert(4,'apple')
+print("after shoplist.insert(4,'apple')")
+print(shoplist)
+"""
+"""
+shoplist=['milk','egg','coffee bean','watermelon','pineapple']
+print(shoplist)
+shoplist.remove('egg')
+print("after shoplist.remove('egg')")
+print(shoplist)
+"""
+"""
+shoplist=['milk','egg','coffee bean','watermelon','pineapple']
+print(shoplist)
+del shoplist[0]
+print("after del shoplist[0]")
+print(shoplist)
+"""
+"""
+shoplist=['milk','egg','coffee bean','watermelon','pineapple']
+print(shoplist)
+shoplist.pop(0)
+print("after shoplist.pop(0)")
+print(shoplist)
+shoplist.pop()
+print("after shoplist.pop()")
+print(shoplist)
+shoplist.pop(-1)
+print("after shoplist.pop(-1)")
+print(shoplist)
+"""
+"""
+shoplist=['milk','egg','coffee bean','watermelon','pineapple']
+print(shoplist)
+shoplist.sort()
+print(shoplist)
+"""
+"""
+list=[1,2,0,3,'python']
+print("串列可以包含各種資料型別的元素")
+print(list)
+"""
+"""
+shoplist=['milk','egg','coffee bean','watermelon','pineapple']
+for item in shoplist:
+    print(item)
+"""
+"""
+shoplist1=['milk','egg','coffee bean']
+print(shoplist1)
+shoplist2=['watermelon','pineapple']
+print(shoplist2)
+shoplist_all=shoplist1+shoplist2
+print(shoplist_all)
+"""
+"""
+list1=list('python')
+print(list1)
+tuple2=('a','b',1,2)
+list2=list(tuple2)
+print(list2)
+"""
+"""
+list3='2016/1/1'.split('/')
+print(list3)
+"""
+
