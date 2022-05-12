@@ -1,0 +1,46 @@
+# -*- coding: utf-8 -*-
+
+"""
+t1=()
+print(t1)
+"""
+"""
+t2=1,2,3
+print(t2)
+"""
+"""
+t3=(1,2,3)
+print(t3)
+"""
+"""
+t3=(1,2,3)
+print(t3[0])
+"""
+"""
+t3=(1,2,3)
+a,b,c=t3
+print('a=',a,',b=',b,'c=',c)
+"""
+"""
+a=10
+b=20
+print('before switch','a=',a,',b=',b)
+a,b=b,a
+print('after switch','a=',a,',b=',b)
+"""
+"""
+list1=[1,2,3,4]
+t4=tuple(list1)
+print(t4)
+"""
+"""
+t5=(1,2,3,4)
+t6=(t5,5,6)
+print(t6)
+print(len(t6))
+print(t6[0][0])
+"""
+"""
+t7=('z',)
+print(t7)
+"""
