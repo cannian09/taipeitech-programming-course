@@ -1,0 +1,93 @@
+# -*- coding: utf-8 -*-
+"""
+score=int(input('請輸入成績:'))
+if score>=60:
+    print('很好請繼續保持')
+else:
+    print('待加油')
+"""
+"""
+price=int(input('請輸入價錢:'))
+if price>=2000:
+    price=price*0.9
+    print('打折後價錢為',price)
+else:
+    print('未打折價錢為',price)
+"""
+"""
+a=int(input('請輸入三角形的邊a的長度:'))
+b=int(input('請輸入三角形的邊b的長度:'))
+c=int(input('請輸入三角形的邊c的長度:'))
+if(a+b>c)and(b+c>a)and(a+c>b):
+    print('可構成三角形')
+else:
+    print('無法構成三角形')
+"""
+"""
+score=int(input('請輸入一個成績:'))
+if score>=80:
+    print('非常好')
+elif score>=60:
+    print('不錯喔')
+else:
+    print('要多加油')
+"""
+"""
+a=(1,2,3,4)
+if 1 in a:
+    print('數字1在tuple中')
+else:
+    print('數字1不在tuple中')
+"""
+"""
+a=list('abcdefghijklmnopqrstwxyz')
+if 'q' in a:
+    print('q在串列a中')
+else:
+    print('q不在串列a中')
+"""
+"""
+lang1={'早安':'Good Morning','謝謝':'thank you'}
+if '謝謝' in lang1:
+    print('謝謝的英文為:',lang1['謝謝'])
+else:
+    print('查不到謝謝的英文')
+"""
+"""
+a=set('tiger')
+if 't' in a:
+    print('t在集合a裡面')
+else:
+    print('t不在集合a裡面')
+"""
+"""
+I=list(input('請輸入你的學號:'))
+ID=list('110310134')
+if I==ID:
+    print('本人')
+elif I[:7]==ID[:7]:
+    print('同年級 同科系 同班')
+elif I[:5]==ID[:5]:
+    print('同年級 同科系')
+elif I[:3]==ID[:3]:
+    print('同年級')
+else:
+    print('非同年級生')
+"""
+
+name=input('請輸入學號:')
+if len(name)  == 9:
+    weight=float(input('請輸入體重(kg):'))
+    high=float(input('請輸入身高(m):'))
+    BMI=float(weight/(high**2))
+    print('BMI=',(BMI))
+    if BMI<18:
+        print('體重過輕')
+    elif BMI<24:
+        print('體重正常')
+    elif  BMI<27:
+        print('體重過重')
+    else :
+        print('體重肥胖')
+else:
+    print('學號格式錯誤')
