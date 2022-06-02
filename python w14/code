@@ -1,0 +1,31 @@
+# -*- coding: utf-8 -*-
+"""
+student=list(input('請輸入學號:'))
+count=[]
+dic={}
+
+if len(student)==9:
+    for i in range(0,9,1):
+        if student[i] in dic:
+            dic[student[i]]+=1
+        else:
+            dic[student[i]]=1
+            count.append(student[i])
+    for i in range(0,4,1):
+        if count[i] in dic:
+            print(count[i],'一共出現',dic[count[i]],'次')
+else:
+    print('輸入錯誤')
+"""
+"""
+amount=100000
+rate=float(input("請輸入年利率(%):"))
+TargetAmount=110310134
+i=0
+summ=amount*((1+(rate/100))**i)
+while summ<=TargetAmount:
+    i=i+1
+    summ=amount*((1+(rate/100))**i)
+    
+print('第',i,'年後本利和為',summ,'超過',(summ-TargetAmount))
+"""
